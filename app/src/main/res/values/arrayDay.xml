@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="monday">
+        <item>Понедельник</item>
+        <item>Первое_дело</item>
+        <item>14.02.2022</item>
+    </string-array>
+
+    <string-array name="tuesday">
+        <item>Вторник</item>
+        <item>Второе_дело</item>
+        <item>15.02.2022</item>
+    </string-array>
+
+    <string-array name="wednesday">
+        <item>Среда</item>
+        <item>Третье_дело</item>
+        <item>16.02.2022</item>
+    </string-array>
+
+    <string-array name="thursday">
+        <item>Четверг</item>
+        <item>Четвертое_дело</item>
+        <item>17.02.2022</item>
+    </string-array>
+
+    <string-array name="friday">
+        <item>Пятница</item>
+        <item>Пятое_дело</item>
+        <item>18.02.2022</item>
+    </string-array>
+
+    <string-array name="saturday">
+        <item>Суббота</item>
+        <item>Шестое_дело</item>
+        <item>19.02.2022</item>
+    </string-array>
+
+    <string-array name="sunday">
+        <item>Воскресенье</item>
+        <item>Седдьмое_дело</item>
+        <item>20.02.2022</item>
+    </string-array>
+</resources>

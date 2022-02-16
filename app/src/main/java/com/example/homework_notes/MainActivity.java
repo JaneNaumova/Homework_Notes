@@ -13,10 +13,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         if(savedInstanceState==null){
-            NoteListFragment noteListFragment = new NoteListFragment();
+            NoteListFragment noteListFragment = NoteListFragment.newInstance();
             getSupportFragmentManager().beginTransaction().replace(R.id.list,noteListFragment).commit();
             if(getResources().getConfiguration().orientation== Configuration.ORIENTATION_LANDSCAPE){
-                NoteFragment noteFragment = new NoteFragment();
+                Notes defaultList = new Notes("Понедельник", R.array.monday);
+                NoteFragment noteFragment = NoteFragment.newInstance(defaultList);
                 getSupportFragmentManager().beginTransaction().replace(R.id.notes,noteFragment).commit();
             }
         }
