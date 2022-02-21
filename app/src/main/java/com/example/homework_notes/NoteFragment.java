@@ -1,5 +1,6 @@
 package com.example.homework_notes;
 
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import androidx.fragment.app.Fragment;
 public class NoteFragment extends Fragment {
 
     public static final String ARG_NOTES = "notes";
+
     private Notes notes;
     public static NoteFragment newInstance(Notes notes) {
         NoteFragment fragment = new NoteFragment();
@@ -36,6 +38,7 @@ public class NoteFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         notes = getArguments().getParcelable(ARG_NOTES);
         TextView textView =  view.findViewById(R.id.textNotes);
-        textView.setText(notes.getNoteIndex());
+        TypedArray noteList = getResources().obtainTypedArray(R.array.list);
+        textView.setText(noteList.getResourceId(notes.getIndex(),R.array.monday));
     }
 }

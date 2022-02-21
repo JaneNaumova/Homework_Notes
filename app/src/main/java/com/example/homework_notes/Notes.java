@@ -4,12 +4,26 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Notes implements Parcelable {
-    private int noteIndex;
-    private String noteName;
+    private int index;
+
+    public Notes(int i) {
+        index = i;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public static Creator<Notes> getCREATOR() {
+        return CREATOR;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
+    }
 
     protected Notes(Parcel in) {
-        noteIndex = in.readInt();
-        noteName = in.readString();
+        index = in.readInt();
     }
 
     public static final Creator<Notes> CREATOR = new Creator<Notes>() {
@@ -24,28 +38,6 @@ public class Notes implements Parcelable {
         }
     };
 
-    public Notes(String noteName, int noteIndex) {
-       this.noteName = noteName;
-       this.noteIndex = noteIndex;
-
-    }
-
-    public int getNoteIndex() {
-        return noteIndex;
-    }
-
-    public String getNoteName() {
-        return noteName;
-    }
-
-    public void setNoteIndex(int noteIndex) {
-        this.noteIndex = noteIndex;
-    }
-
-    public void setNoteName(String noteName) {
-        this.noteName = noteName;
-    }
-
     @Override
     public int describeContents() {
         return 0;
@@ -53,7 +45,8 @@ public class Notes implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(noteIndex);
-        parcel.writeString(noteName);
+        parcel.writeInt(index);
     }
 }
+
+
